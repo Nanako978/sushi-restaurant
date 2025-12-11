@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Sushi Chat - Commande en ligne</title>
+    <link rel="stylesheet" href="stylesheet/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <img src="images/fishing cat complet claear.png" alt="Le Sushi Chat Logo">
+        <div>
+            <h1>Le Sushi Chat</h1>
+            <p>Fraîchement Pêché, Tendrement Préparé.</p>
+        </div>
+    </header>
+
+    <section class="menu">
+
+
+        <div class="dish">
+            <img src="images/Assortiment_de_Sushis_Traditionnels-removebg-preview.png" alt="Assortiment de Sushis Traditionnels">
+            <h3>Assortiment de Sushis Traditionnels</h3>
+            <p>6 pièces — Saumon, thon, daurade, crevette</p>
+            <p>Quantité : 6 pièces</p>
+            <p>Prix : 14 €</p>
+
+            <div class="order-actions">
+                <input type="number" min="1" value="1" class="quantity-selector">
+                <button class="ajouter-btn">Ajouter</button>
+            </div>
+        </div>
+
+        <div class="dish">
+            <img src="images/Maki_Avocat-Saumon2-removebg-preview.png" alt="Maki Avocat-Saumon">
+            <h3>Maki Avocat-Saumon</h3>
+            <p>Rouleaux de riz, avocat frais, saumon cru, feuille de nori</p>
+            <p>Quantité : 8 pièces</p>
+            <p>Prix : 10 €</p>
+
+            <div class="order-actions">
+                <input type="number" min="1" value="1" class="quantity-selector">
+                <button class="ajouter-btn">Ajouter</button>
+            </div>
+        </div>
+
+        <div class="dish">
+            <img src="images/Sashimi_de_Thon_rouge-removebg-preview.png" alt="Sashimi de Thon Rouge">
+            <h3>Sashimi de Thon Rouge</h3>
+            <p>Tranches fines de thon rouge extra-frais, servi nature</p>
+            <p>Quantité : 9 pièces</p>
+            <p>Prix : 16 €</p>
+
+            <div class="order-actions">
+                <input type="number" min="1" value="1" class="quantity-selector">
+                <button class="ajouter-btn">Ajouter</button>
+            </div>
+        </div>
+
+        <div class="dish">
+            <img src="images/Chirashi_Saumon2-removebg-preview.png" alt="Chirashi Saumon">
+            <h3>Chirashi Saumon</h3>
+            <p>Bol de riz vinaigré garni de tranches de saumon, avocat, sésame</p>
+            <p>Quantité : 1 bol</p>
+            <p>Prix : 13 €</p>
+
+            <div class="order-actions">
+                <input type="number" min="1" value="1" class="quantity-selector">
+                <button class="ajouter-btn">Ajouter</button>
+            </div>
+        </div>
+
+        <div class="dish">
+            <img src="images/Tempura_de_Crevettes2-removebg-preview.png" alt="Tempura de Crevettes">
+            <h3>Tempura de Crevettes</h3>
+            <p>Crevettes croustillantes en beignet, sauce tempura maison</p>
+            <p>Quantité : 5 pièces</p>
+            <p>Prix : 9 €</p>
+
+            <div class="order-actions">
+                <input type="number" min="1" value="1" class="quantity-selector">
+                <button class="ajouter-btn">Ajouter</button>
+            </div>
+        </div>
+
+        <div class="dish">
+            <img src="images/Thé_Vert_Japonais-removebg-preview.png" alt="Thé Vert Japonais">
+            <h3>Boisson : Thé Vert Japonais</h3>
+            <p>Thé chaud, parfum délicat et rafraîchissant</p>
+            <p>Quantité : 1 tasse</p>
+            <p>Prix : 3 €</p>
+
+            <div class="order-actions">
+                <input type="number" min="1" value="1" class="quantity-selector">
+                <button class="ajouter-btn">Ajouter</button>
+            </div>
+        </div>
+        </section>
+        <section class="checkout-container">
+            <h2>Checkout</h2>
+
+
+                 <!--NEW LINE FROM FROM TO POST -->
+                 <form action="process_order.php" method="post">
+
+
+            <div class="checkout-card">
+                <h3>Votre Panier</h3>
+                <ul id="cart-items"></ul>
+                <p id="total-price">Total : 0 €</p>
+            </div>
+
+            <div class="checkout-card">
+                <h3>Info client</h3> <br>
+                <label for="fname"><i class="fa fa-user"></i>&nbsp;Nom</label>
+                <input type="text" id="fname" name="firstname" placeholder="Jean Martin">
+
+                <label for="email"><i class="fa fa-envelope"></i>&nbsp;Email</label>
+                <input type="text" id="email" name="email" placeholder="jean@exemple.com">
+            </div>
+
+            <div class="checkout-card">
+                <h3>Adresse</h3> <br>
+
+                <label for="adress_num">Numéro</label> 
+                <input id="adress_num" name="adress_num" type="number" min="1">
+
+                <label for="adress_type-voie">Type de voie</label>
+                <select id="adress_type-voie" name="adress_type-voie">
+                    <option>rue</option>
+                    <option>ruelle</option>
+                    <option>impasse</option>
+                    <option>avenue</option>
+                    <option>boulevard</option>
+                    <option>place</option>
+                    <option>placette</option>
+                </select>
+
+                <label for="adress_nom-voie">Nom de la voie</label>
+                <input id="adress_nom-voie" name="adress_nom-voie" type="text">
+
+                <label for="adress_lieu-dit">Lieu-dit, hameau, etc.</label>
+                <input id="adress_lieu-dit" name="adress_lieu-dit" type="text">
+
+                <label for="adress_code-postal">Code postal</label>
+                <input id="adress_code-postal" name="adress_code-postal" type="tel" minlength="5" maxlength="5">
+
+
+
+                <label for="adress_commune">Commune</label>
+                <select id="adress_commune" name="adress_commune">
+                    <option value="">-- Sélectionnez une commune --</option>
+                </select>
+
+            </div>
+
+            <div class="checkout-card">
+                <h3>Paiement</h3>
+
+
+                <div class="icon-container">
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="visa">
+                        <i class="fa-brands fa-cc-visa"></i>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="paypal">
+                        <i class="fa-brands fa-cc-paypal"></i>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="mastercard">
+                        <i class="fa-brands fa-cc-mastercard"></i>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="discover">
+                        <i class="fa-brands fa-cc-discover"></i>
+                    </label>
+                </div>
+
+                <label for="cname">Nom du titulaire</label>
+                <input type="text" id="cname" name="cardname" placeholder="Jean Martin">
+
+                <label for="ccnum">Numéro</label>
+                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" maxlength="16">
+
+                <label for="expmonth">Date d'expiration</label>
+                <input type="date" id="expmonth" name="expmonth">
+
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="352">
+            </div>
+
+            <div class="btn-container">
+                <button type="submit" class="btn-valider"><a href="../Sushi form copy/pages/confirmation.html" style ="text-decoration: none; color: white;">
+
+                 Commander</a></button>
+            </div>
+            
+      
+
+
+        </form> 
+     </section>
+        </div>
+        </div>
+
+
+
+
+
+        </div>
+        <script src="index.js"></script>
+</body>
+<footer>
+
+
+
+    <p>&copy; 2025 Le Sushi Chat - Tous droits réservés -
+        <a href="pages/mentions legales.html" class="footer-link">Mentions légales</a>
+    </p>
+
+
+</footer>
+
+</html>
+
+
+
+
+
+
